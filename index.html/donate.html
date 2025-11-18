@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Donate — Mercy of Outreach Community-Based Organization (C.B.O)</title>
+  <style>
+  
+    :root {
+      --accent: #aa8612;
+      --primary: #f7c600;
+      --bg: #fff;
+      --text: #333;
+      --note: #b33;
+      --header-height: 400px;
+      --container-width: 1000px;
+    }
+
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    
+    header {
+      background: url('WhatsApp Image 2025-11-13 at 16.16.42_480ece60.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 6rem 1rem;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.5);
+    }
+    header h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    header p {
+      position: relative;
+      z-index: 1;
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+   
+    main {
+      padding: 3rem 0;
+    }
+    h2 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+   
+    .donation-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .amount-btn {
+      padding: 0.8rem 1.4rem;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--accent);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .amount-btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+   
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 350px;
+      max-width: 90%;
+      text-align: center;
+      position: relative;
+    }
+    .modal-content h3 {
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    .modal-content label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      text-align: left;
+    }
+    .modal-content input {
+      width: 100%;
+      padding: 0.6rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .modal-content .btn {
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .modal-content .btn:hover {
+      background: #8a6f0f;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #aaa;
+    }
+
+    
+    .warm-message {
+      background: #fff7ed;
+      padding: 2rem;
+      border-radius: 10px;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    .warm-message h3 { color: var(--accent); margin-bottom: 1rem; }
+    .warm-message p { margin-bottom: 1rem; line-height: 1.5; }
+    .warm-message .btn {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+    .warm-message .btn:hover { background: #8a6f0f; }
+
+    
+    .note { color: var(--note); font-size: 0.9rem; margin-top: 0.5rem; }
+
+    
+    footer {
+      margin-top: 3rem;
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    ul li {
+      margin: 0.6rem 0;
+      position: relative;
+      padding-left: 1.4rem;
+    }
+    ul li::before {
+      content: "✔";
+      color: var(--primary);
+      position: absolute;
+      left: 0;
+    }
+
+   
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      .donation-grid { flex-direction: column; align-items: center; }
+    }
+  </style>
+
+  <main class="container">
+    <h2>Make a Difference Today</h2>
+    <p>Select an amount below to donate via <strong>M-Pesa</strong>. Once confirmed, an <strong>STK Push</strong> will be sent directly to your phone.</p>
+    
+    <div id="warm-message" class="warm-message hidden">
+      <h3>Thank You for Your Kindness 💚</h3>
+      <p id="warm-text"></p>
+      <p>You can also donate directly using: <strong>Paybill 247247</strong> — Account <strong>211400</strong><br>Account Name: <strong>Mercy of Outreach C.B.O</strong></p>
+      <a href="index.html" class="btn">Return Home</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Mercy of Outreach C.B.O — Dandu, Kenya · Together, we uplift through education and compassion.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

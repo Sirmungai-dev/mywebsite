@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Contact Us - Little Crest Junior & High School</title>
+    <style>
+       
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            color: #333; 
+            background-color: #f8f9fa;
+            animation: fadeInBody 1.2s ease-in-out;
+        }
+
+        @keyframes fadeInBody {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+       
+        header { 
+            background: url('contact.jpg') center/cover no-repeat; 
+            color: #fff; 
+            text-align: center; 
+            padding: 6rem 1rem; 
+            position: relative; 
+            overflow: hidden;
+            transition: all 0.5s ease;
+            animation: fadeInHeader 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInHeader {
+            from { opacity: 0; transform: scale(1.05); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        header::before { 
+            content: ""; 
+            position: absolute; 
+            top:0; left:0; right:0; bottom:0; 
+            background: rgba(0,0,0,0.6); 
+            z-index: 0;
+            transition: background 0.4s ease;
+        }
+
+        header.darkened::before {
+            background: rgba(0,0,0,0.75);
+        }
+
+        header h1 { 
+            position: relative; 
+            z-index: 1; 
+            margin: 0; 
+            font-size: 3rem; 
+            animation: fadeInText 2s ease-in-out;
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        
+        .container { 
+            max-width: 800px; 
+            margin: 2rem auto; 
+            padding: 0 1rem; 
+        }
+        .contact-info p { 
+            font-size: 1.2rem; 
+            margin: 1.2rem 0; 
+            text-align: center; 
+        }
+        .contact-info i {
+            margin-right: 0.5rem;
+            color: #0078d7;
+        }
+
+        
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        .contact-buttons a, .contact-buttons button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .call-btn {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .call-btn:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+        .email-btn {
+            background-color: #0078d7;
+            color: #fff;
+        }
+        .email-btn:hover {
+            background-color: #005fa3;
+            transform: translateY(-2px);
+        }
+
+        
+        .copy-message {
+            text-align: center;
+            margin-top: 1rem;
+            color: #28a745;
+            font-weight: bold;
+            display: none;
+        }
+
+      
+        footer { 
+            margin-top: 3rem; 
+            background: #222; 
+            color: #fff; 
+            text-align: center; 
+            padding: 1rem; 
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2rem; }
+        }
+    </style>
+
+    
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header id="pageHeader">
+    <h1>Contact Us</h1>
+</header>
+
+<div class="container contact-info">
+    <p><i class="fas fa-map-marker-alt"></i><strong>Address:</strong><br> Dandu, Kenya, Kenya</p>
+
+    <p><i class="fas fa-phone-alt"></i><strong>Phone:</strong><br> 
+        <a href="tel:+254720038981" style="color:#0078d7; text-decoration:none;">+254 720 038 981</a>
+    </p>
+
+    <p><i class="fas fa-envelope"></i><strong>Email:</strong><br> 
+        <a href="mailto:mercyofoutreach@gmail.com?subject=Inquiry%20from%20Little%20Crest%20School%20Website&body=Hello%20Little%20Crest%20Team,%0A%0AI%20would%20like%20to%20inquire%20about...%0A%0AThank%20you." 
+           style="color:#0078d7; text-decoration:none;">
+           mercyofoutreach@gmail.com
+        </a>
+    </p>
+
+    <p><i class="fas fa-clock"></i><strong>Office Hours:</strong><br> Mon - Fri: 8:00 AM - 5:00 PM</p>
+
+    <div class="contact-buttons">
+        <a class="call-btn" href="tel:+254720038981">📞 Call Us</a>
+
+       
+        <button class="email-btn" id="emailButton">✉️ Email Us</button>
+    </div>
+
+    <p id="copyMessage" class="copy-message">📋 Email address copied to clipboard!</p>
+</div>
+
+<footer>
+    &copy; 2025 Mercy of Outreach Community-Based Organization (C.B.O), Kenya
+</footer>
+
+<script>
+    
+    const header = document.getElementById('pageHeader');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('darkened');
+        } else {
+            header.classList.remove('darkened');
+        }
+    });
+
+    
+    const emailBtn = document.getElementById('emailButton');
+    const copyMsg = document.getElementById('copyMessage');
+    const email = "mercyofoutreach@gmail.com";
+    const subject = encodeURIComponent("Inquiry from Little Crest School Website");
+    const body = encodeURIComponent("Hello Little Crest Team,\n\nI would like to inquire about...\n\nThank you.");
+
+    emailBtn.addEventListener('click', () => {
+        const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
+        try {
+           
+            window.location.href = mailtoLink;
+            
+           
+            setTimeout(() => {
+                navigator.clipboard.writeText(email).then(() => {
+                    copyMsg.style.display = "block";
+                    setTimeout(() => (copyMsg.style.display = "none"), 3000);
+                });
+            }, 1000);
+        } catch (err) {
+            
+            navigator.clipboard.writeText(email).then(() => {
+                copyMsg.style.display = "block";
+                setTimeout(() => (copyMsg.style.display = "none"), 3000);
+            });
+        }
+    });
+</script>
+
+<footer>
+    &copy; 2025 Mercy of Outreach Community-Based Organization (C.B.O), Kenya
+</footer>
+</body>
+</html>
