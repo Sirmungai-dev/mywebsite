@@ -3,97 +3,165 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Welcome to Mercy of Outreach Community-Based Organization (C.B.O)</title>
+    <title>Mercy of Outreach Community-Based Organization (C.B.O)</title>
+
     <style>
+        /* ROOT COLORS & FONTS */
         :root {
-            --primary-color: rgba(0,0,0,0.5); 
+            --primary-overlay: rgba(0,0,0,0.55);
             --secondary-color: #f7c600;
-            --bg-color: white;
-            --text-color: #141212;
+            --text-light: #ffffff;
             --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
         body {
             margin: 0;
             font-family: var(--font-family);
-            color: var(--text-color);
-            background: var(--bg-color);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            background: white;
+            overflow-x: hidden;
         }
+
+        /* HEADER SECTION */
         header {
             position: relative;
+            height: 100vh;
             background: url('WhatsApp Image 2025-11-13 at 16.16.42_480ece60.jpg') center/cover no-repeat;
-            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-light);
             text-align: center;
-            padding: 22rem 2rem;
         }
+
+        /* DARK OVERLAY */
         header::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: var(--primary-color);
-        }
-        header h1, header p {
-            position: relative;
+            background: var(--primary-overlay);
             z-index: 1;
         }
+
+        /* LOGO */
+        .site-logo {
+            width: 170px;
+            border-radius: 15px;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 2s ease forwards;
+        }
+
+        /* TITLE & TEXT */
         header h1 {
-            margin: 0.1;
-            font-size: 3rem;
+            position: relative;
+            margin-top: 1.2rem;
+            font-size: 2.8rem;
+            line-height: 1.2;
+            z-index: 2;
+            animation: slideDown 1.5s ease forwards;
         }
+
         header p {
+            position: relative;
+            font-size: 1.2rem;
             margin-top: 1rem;
-            font-size: 2rem;
+            max-width: 750px;
+            z-index: 2;
+            animation: fadeIn 2s ease 0.5s forwards;
         }
-        .content {
-            max-width: 800px;
-            margin: 3rem auto;
-            text-align: center;
-            padding: 0 1rem;
-            color: #333;
-        }
+
+        /* BUTTON */
         .cta-btn {
-            display: inline-block;
             margin-top: 2rem;
+            padding: 0.9rem 2rem;
             background: var(--secondary-color);
             color: #000;
-            padding: 0.8rem 1.5rem;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+            transition: 0.3s;
+            animation: fadeIn 2s ease 1s forwards;
         }
+
         .cta-btn:hover {
             background: #e6b800;
+            transform: scale(1.05);
         }
+
+        /* CONTENT SECTION */
+        .content {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+            text-align: center;
+        }
+
         footer {
-            margin-top: auto;
             background: #222;
             color: #fff;
             text-align: center;
             padding: 1.2rem;
+            margin-top: 3rem;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideDown {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2rem; }
+            header p { font-size: 1.0rem; }
+            .site-logo { width: 140px; }
+        }
+
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.8rem; }
+            header p { font-size: 0.95rem; }
+            .cta-btn { font-size: 1rem; padding: 0.7rem 1.5rem; }
         }
     </style>
 </head>
+
 <body>
 
+    <!-- BEAUTIFUL ANIMATED HEADER -->
     <header>
-        <div class="logo-background"></div>
-        <h1><b>Welcome to Mercy of Outreach Community-Based Organization (C.B.O)</b></h1>
-        <p><b>Mercy of Outreach C.B.O is a faith-driven community organization based in Dandu, dedicated to transforming lives through education, compassion, and service.</b></p>
+        <img src="WhatsApp Image 2025-11-13 at 16.16.42_480ece60.jpg" 
+             alt="Mercy of Outreach C.B.O Logo" 
+             class="site-logo">
+
+        <h1><b>Mercy of Outreach Community-Based Organization (C.B.O)</b></h1>
+
+        <p><b>Empowering the Dandu community through education, compassion, faith, and transformative service to build a brighter future for all.</b></p>
+
+        <a href="about us.html" class="cta-btn">Learn More</a>
     </header>
 
+    <!-- CONTENT AREA -->
+    <div class="content">
+        <h2>Welcome to Our Community Initiative</h2>
+        <p>
+            Mercy of Outreach C.B.O is committed to uplifting vulnerable families, supporting education,
+            promoting youth empowerment, and providing compassionate community services.
+        </p>
+    </div>
 
-<div class="content">
-    
-    <a href="about us.html" class="cta-btn">Learn More</a>
-
-</div>
-
-<footer>
-    &copy;2025 Mercy of Outreach Community-Based Organization (C.B.O)
-</footer>
+    <!-- FOOTER -->
+    <footer>
+        &copy; 2025 Mercy of Outreach Community-Based Organization (C.B.O)
+    </footer>
 
 </body>
 </html>
